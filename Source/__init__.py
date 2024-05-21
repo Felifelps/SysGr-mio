@@ -1,3 +1,2 @@
-__all__ = [
-    "view",
-]
+from .main import main
+from .control import Control

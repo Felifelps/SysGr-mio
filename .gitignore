@@ -1,3 +1,7 @@
-#autocreated files
-Data\progress
+.pytest_cache
 __pycache__
+dist
+build
+.vscode
+venv
+.env
