@@ -11,13 +11,25 @@ class ResultPage(View):
     def __init__(self, **kwargs):
         self.file_path = ''
         self.results = ft.Column(
+            scroll=ft.ScrollMode.AUTO,
             controls=[],
             horizontal_alignment=ft.CrossAxisAlignment.CENTER
         )
         self.votes_count = ft.Text()
         self.content_controls = [
-            self.votes_count,
-            self.results,
+            ft.Container(
+                border=ft.border.all(
+                    1, ft.colors.GREY_600
+                ),
+                padding=ft.padding.all(30),
+                content=ft.Column(
+                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                    controls=[
+                        self.votes_count,
+                        self.results
+                    ]
+                )
+            ),
             CustomButton(
                 'Abrir arquivo com Resultado',
                 on_click=lambda _: os.system(f'notepad "{self.file_path}"')

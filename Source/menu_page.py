@@ -3,7 +3,7 @@ from .models import Chapa
 from .view import View
 
 class MenuPage(View):
-    title = "SysGremio"
+    title = ""
     start_voting_button = CustomButton(
         'Iniciar Votação',
         on_click=lambda e: e.page.go('/vote')

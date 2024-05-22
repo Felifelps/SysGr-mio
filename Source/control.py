@@ -16,7 +16,7 @@ class Control:
         '%USERPROFILE%', 
         os.environ.get('USERPROFILE')
     )
-    pw = os.environ.get('DEVSYSTEMS_S_DATA').encode('utf-8')
+    pw = os.environ.get('SYSGREMIO').encode('utf-8')
 
     @classmethod
     def check_credentials(cls, password: str):

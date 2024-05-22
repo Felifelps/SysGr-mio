@@ -52,7 +52,7 @@ class VotingPage(View):
             ]
         )
 
-        self.votes_count = ft.Text()
+        self.votes_count = ft.Text(height=75)
         self.content_controls = [
             self.votes_count,
             CustomButton(
@@ -60,7 +60,7 @@ class VotingPage(View):
                 on_click=self.open_first_dialog
             ),
             CustomButton(
-                'Finalizar Votação',
+                'Finalizar',
                 on_click=self.open_password_dialog
             )
         ]

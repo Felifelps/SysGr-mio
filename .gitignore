@@ -5,3 +5,6 @@ build
 .vscode
 .venv
 .env
+save.bat
+icon.ico
+**.spec

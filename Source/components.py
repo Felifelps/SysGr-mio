@@ -1,15 +1,5 @@
 import flet as ft
 
-class Title(ft.Container):
-    def __init__(self, title, **kwargs):
-        super().__init__(**kwargs)
-        self.content = ft.Text(
-            title,
-            size=40,
-        )
-        self.alignment = ft.alignment.center
-        self.height = 200
-
 class Message(ft.SnackBar):
     colors = {
         'default': ft.colors.GREY_800,
