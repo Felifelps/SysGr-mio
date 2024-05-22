@@ -1,12 +1,10 @@
-import datetime
-
 import flet as ft
 
 class Title(ft.Container):
     def __init__(self, title, **kwargs):
         super().__init__(**kwargs)
         self.content = ft.Text(
-            title, 
+            title,
             size=40,
         )
         self.alignment = ft.alignment.center
@@ -24,9 +22,6 @@ class Message(ft.SnackBar):
                 'Default message',
                 color=ft.colors.GREY_100
             ),
-            shape=ft.RoundedRectangleBorder(radius=50),
-            margin=10,
-            bgcolor=ft.colors.GREY_800,
             **kwargs
         )
         self.page = page

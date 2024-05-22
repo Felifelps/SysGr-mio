@@ -1,11 +1,11 @@
 import flet as ft
-from .components import Title, CustomButton
-
+from .components import Title
 
 class View(ft.View):
     page = None
     title = 'Title'
     content_controls = []
+    allow_url = True
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.drawer = self.page.drawer
@@ -39,9 +39,19 @@ class View(ft.View):
                 ft.Container(
                     alignment=ft.alignment.center,
                     height=100,
-                    content=ft.Text(
-                        '@felifelps.dev\nEx-aluno do curso de informática',
-                        text_align=ft.TextAlign.CENTER,
+                    content=ft.Column(
+                        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                        controls=[
+                            ft.TextButton(
+                                '@felifelps.dev',
+                                url="https://www.instagram.com/felifelps.dev/" if self.allow_url else "",
+                                style=ft.ButtonStyle(overlay_color=ft.colors.BACKGROUND)
+                            ),
+                            ft.Text(
+                                'Ex-aluno do curso de informática',
+                                text_align=ft.TextAlign.CENTER,
+                            )
+                        ]
                     )
                 )
             ],

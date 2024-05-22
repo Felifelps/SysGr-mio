@@ -1,6 +1,6 @@
 import os
 
-from peewee import SqliteDatabase, Model, CharField, IntegerField, DateField
+from peewee import SqliteDatabase, Model, CharField, IntegerField
 
 path = os.path.join(os.environ.get('LOCALAPPDATA'), 'SysGremio')
 
@@ -29,6 +29,15 @@ class Chapa(BaseModel):
     def __repr__(self) -> str:
         return str(self.name)
 
+class Data(BaseModel):
+    key = CharField()
+    value = CharField()
+
+    @classmethod
+    def get_value(cls, key, default=None):
+        obj = Data.get_or_none(key=key)
+        return obj.value if obj else default
+
 db.connect()
 
-db.create_tables([Chapa], safe=True)
+db.create_tables([Chapa, Data], safe=True)
