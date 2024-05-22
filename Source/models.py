@@ -1,6 +1,6 @@
 import os
 
-from peewee import SqliteDatabase, Model, CharField, TextField, DateField
+from peewee import SqliteDatabase, Model, CharField, IntegerField, DateField
 
 path = os.path.join(os.environ.get('LOCALAPPDATA'), 'SysGremio')
 
@@ -15,23 +15,20 @@ class BaseModel(Model):
     class Meta:
         database = db
 
-
 # Create your models here.
-class Cliente(BaseModel):
-    nome = CharField(max_length=50)
-    data_nasc = DateField()
-    tel = CharField(max_length=20)
-    email = CharField()
-    endereco = TextField()
-    cpf = CharField(max_length=14)
-    rg = CharField(max_length=12)
+class Chapa(BaseModel):
+    name = CharField()
+    votes = IntegerField(default=0)
+
+    def get_data(self):
+        return self.__dict__['__data__']
 
     def __str__(self) -> str:
-        return str(self.nome)
+        return str(self.name)
 
-    def get_data(self) -> dict:
-        return self.__dict__['__data__']
+    def __repr__(self) -> str:
+        return str(self.name)
 
 db.connect()
 
-db.create_tables([Cliente], safe=True)
+db.create_tables([Chapa], safe=True)

@@ -2,7 +2,9 @@ import flet as ft
 
 from .components import Message
 from .menu_page import MenuPage
+from .configure_page import ConfigurePage
 from .view import View
+from .voting_page import VotingPage
 
 def main(page: ft.Page):
     page.title = "SysGremio"
@@ -17,6 +19,8 @@ def main(page: ft.Page):
 
     page.views.extend([
         MenuPage(route='/menu'),
+        ConfigurePage(route='/conf'),
+        VotingPage(route='/vote')
     ])
 
     def on_route_change(_):
@@ -26,4 +30,4 @@ def main(page: ft.Page):
         page.update()
 
     page.on_route_change = on_route_change
-    page.go('/menu')
+    page.go('/vote')
