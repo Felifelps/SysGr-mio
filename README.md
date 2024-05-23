@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="/assets/icon.png" alt="Logo" width=200 height=200>
+</p>
+
 # SysGremio
 
 O SysGremio é uma urna eletrônica desenvolvida inicialmente no segundo ano do curso técnico em informática.
