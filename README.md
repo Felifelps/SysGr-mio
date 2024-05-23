@@ -4,7 +4,7 @@
 
 # SysGremio
 
-O SysGremio é uma urna eletrônica desenvolvida inicialmente no segundo ano do curso técnico em informática.
+O SysGremio é uma urna eletrônica desenvolvida inicialmente no segundo ano do curso técnico em informática para ser utilizada durante a eleição do Grêmio da escola.
 
 ## Funcionalidades
 
