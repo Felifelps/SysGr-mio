@@ -1,10 +1,10 @@
-.pytest_cache
-__pycache__
+**/__pycache__
 dist
 build
 .vscode
 .venv
 .env
-save.bat
-icon.ico
+**.bat
+**.ico
 **.spec
+**.db
