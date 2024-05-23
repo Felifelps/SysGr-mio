@@ -48,7 +48,7 @@ Para instalar o projeto no Windows, siga os seguintes passos:
     flet run app.py
     ```
 
-Ou tente instalar [o pacote .msi](/windows/SysGremio.msi) na pasta `/windows`.
+Ou tente instalar [o pacote .msi](/windows) na pasta `/windows`.
 
 ### Linux e MacOS
 
