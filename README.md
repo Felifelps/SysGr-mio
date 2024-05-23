@@ -35,12 +35,15 @@ Para instalar o projeto, siga os seguintes passos:
 3. Entre na pasta do projeto, crie e ative um ambiente virtual:
 
     - Windows:
+
         ```
         cd SysGremio
         python -m venv venv
         venv\Scripts\activate
         ```
+
     - Linux/MacOS:
+
         ```
         cd SysGremio
         python3 -m venv venv
