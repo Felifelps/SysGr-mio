@@ -68,7 +68,7 @@ Para instalar o projeto, siga os seguintes passos:
     flet run app.py
     ```
 
-Ou tente instalar para windows com [o pacote .msi](/windows).
+Ou tente instalar para windows com [o pacote .msi](https://github.com/Felifelps/SysGremio/releases/tag/windows).
 
 ## Contribuição
 
