@@ -67,8 +67,8 @@ Para configurar sua senha, siga o passo a passo:
     ```
     python
     from bcrypt import hashpw, gensalt
-    pw = hashpw('<sua-senha>'.encode('utf-8'), gensalt())
-    pw
+    pw = str(hashpw('<sua-senha>'.encode('utf-8'), gensalt()))
+    print(pw[2:-1])
     ```
 
 2. Copie a senha criptografada
