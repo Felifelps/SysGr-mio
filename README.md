@@ -59,7 +59,7 @@ Para instalar o projeto, siga os seguintes passos:
 5. Agora, rode o seguinte comando para gerar sua senha:
 
     ```
-    python generate_env.py <sua-senha>
+    python generate_env.py
     ```
 
 6. Para iniciar o projeto, rode o seguinte comando:
