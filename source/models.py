@@ -41,3 +41,7 @@ class Data(BaseModel):
 db.connect()
 
 db.create_tables([Chapa, Data], safe=True)
+
+if not list(Chapa.select()):
+    Chapa.create(name='Chapa 1')
+    Chapa.create(name='Chapa 2')
