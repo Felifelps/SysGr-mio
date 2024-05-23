@@ -15,17 +15,15 @@ O SysGremio é uma urna eletrônica desenvolvida inicialmente no segundo ano do 
 
 ## Tecnologias usadas
 
-- Python
-- Framework Flet
-- Bcrypt, para criptografia
-- Peewee, como *Object Relational Mapping*
-- Dotenv
+- Python;
+- Framework Flet;
+- Bcrypt, para criptografia;
+- Peewee, como *Object Relational Mapping*;
+- Dotenv.
 
 ## Instalação
 
-### Windows
-
-Para instalar o projeto no Windows, siga os seguintes passos:
+Para instalar o projeto, siga os seguintes passos:
 
 1. [Instale o python](https://www.python.org/downloads/) mais recente em sua máquina
 2. Clone o projeto:
@@ -33,52 +31,41 @@ Para instalar o projeto no Windows, siga os seguintes passos:
     ```
     git clone https://github.com/Felifelps/SysGremio SysGremio
     ```
+
 3. Entre na pasta do projeto, crie e ative um ambiente virtual:
 
-    ```
-    cd SysGremio
-    python -m venv venv
-    venv\Scripts\Activate
-    ```
+    - Windows:
+        ```
+        cd SysGremio
+        python -m venv venv
+        venv\Scripts\activate
+        ```
+    - Linux/MacOS:
+        ```
+        cd SysGremio
+        python3 -m venv venv
+        source venv/bin/activate
+        ```
+
 4. Instale as dependências do projeto:
 
     ```
     pip install -r requirements.txt
     ```
-5. Agora siga o passo a passo da [configuração da senha](#senha)
-6. Após as instalações, rode o seguinte comando:
+
+5. Agora, rode o seguinte comando para gerar sua senha:
+
+    ```
+    python generate_env.py <sua-senha>
+    ```
+
+6. Para iniciar o projeto, rode o seguinte comando:
 
     ```
     flet run app.py
     ```
 
 Ou tente instalar [o pacote .msi](/windows) na pasta `/windows`.
-
-### Linux e MacOS
-
-O projeto ainda não está 100% disponível para Linux ou MacOS.
-
-## Senha
-
-Para configurar sua senha, siga o passo a passo:
-
-1. Com o venv ativado, rode os seguintes comandos, linha por linha (lembre de editar a senha):
-    
-    ```
-    python
-    from bcrypt import hashpw, gensalt
-    pw = str(hashpw('<sua-senha>'.encode('utf-8'), gensalt()))
-    print(pw[2:-1])
-    ```
-
-2. Copie a senha criptografada
-3. No diretório da aplicação, crie um arquivo `.env` com o seguinte conteúdo:
-
-    ```
-    SYSGREMIO=<senha-copiada>
-    ```
-
-Agora sua senha está configurada.
 
 ## Contribuição
 
