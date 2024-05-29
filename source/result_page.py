@@ -43,15 +43,13 @@ class ResultPage(View):
         super().__init__(**kwargs)
 
 
-    def on_pre_view(self):
+    def on_pre_view(self, e):
         results, votes, self.file_path = Control.get_and_save_results()
 
         self.results.controls = [ft.Text(r) for r in results]
         self.votes_count.value = f'Votos computados: {votes}'
 
-        self.page.snack_bar.message(
+        e.page.snack_bar.message(
             'Votação Finalizada com sucesso!\nResultado salvo na sua área de trabalho', 
             'success'
         )
-
-        return super().on_pre_view()

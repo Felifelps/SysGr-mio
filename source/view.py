@@ -16,7 +16,7 @@ class View(ft.View):
             )
         ]
 
-    def on_pre_view(self):
+    def on_pre_view(self, e):
         pass
 
     def generate_main_content(self):

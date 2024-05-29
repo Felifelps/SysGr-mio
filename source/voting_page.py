@@ -66,8 +66,7 @@ class VotingPage(View):
         ]
         super().__init__(**kwargs)
 
-    def on_pre_view(self):
-        self.page.window_prevent_close = True
+    def update_data(self):
         votes = 0
         self.radios.controls.clear()
 
@@ -80,11 +79,14 @@ class VotingPage(View):
 
         self.radios.height = len(self.radios.controls) * 50
 
+    def on_pre_view(self, e):
+        e.page.window_prevent_close = True
+
+        self.update_data()
+
         Control.start_voting()
 
-        self.page.snack_bar.message('Votação iniciada')
-
-        return super().on_pre_view()
+        e.page.snack_bar.message('Votação iniciada')
 
     def open_password_dialog(self, e):
         self.password_field.value = ""
@@ -120,9 +122,10 @@ class VotingPage(View):
         self.radio_group.value = None
 
         self.page = e.page
-        self.on_pre_view()
+        self.update_data()
 
         self.audio.play()
 
         e.page.close_dialog()
-        e.page.update()
+
+        e.page.snack_bar.message('Voto computado com sucesso!', 'success')

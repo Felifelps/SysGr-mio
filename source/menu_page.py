@@ -20,7 +20,8 @@ class MenuPage(View):
             on_click=lambda e: e.page.window_close()
         ),
     ]
-    def on_pre_view(self):
+
+    def on_pre_view(self, e):
         non_finished_voting = False
         for chapa in Chapa.select():
             if chapa.votes:
@@ -28,5 +29,3 @@ class MenuPage(View):
 
         self.start_voting_button.text = ('Continuar' if non_finished_voting else 'Iniciar') + ' Votação'
         self.configure_button.visible = not non_finished_voting
-
-        return super().on_pre_view()

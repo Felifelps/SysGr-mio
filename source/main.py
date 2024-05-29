@@ -25,10 +25,9 @@ def main(page: ft.Page):
         ResultPage(route='/result')
     ])
 
-    def on_route_change(_):
+    def on_route_change(e):
         page.views.sort(key=lambda view: view.route == page.route)
-        page.views[-1].page = page
-        page.views[-1].on_pre_view()
+        page.views[-1].on_pre_view(e)
         page.update()
 
     page.on_route_change = on_route_change
