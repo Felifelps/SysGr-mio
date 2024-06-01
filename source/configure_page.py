@@ -7,7 +7,8 @@ from .view import View
 class ConfigurePage(View):
     title = "Configurar Chapas"
     chapa_field = ft.TextField(
-        label='Nome da chapa'
+        label='Nome da chapa',
+        autofocus=True,
     )
     list_view = ft.ListView()
     def __init__(self, **kwargs):
@@ -38,23 +39,27 @@ class ConfigurePage(View):
 
     def check_for_new_chapa(self, e):
         value = self.chapa_field.value.strip()
-        if value and not Chapa.get_or_none(name=value):
+        chapa = Chapa.get_or_none(name=value)
+        if value and not chapa:
             self.chapa_field.value = ''
             Chapa.create(name=value)
-            self.on_pre_view()
-            e.page.update()
+            self.on_pre_view(e)
+        elif chapa:
+            e.page.snack_bar.message(f'A chapa "{value}" já existe!')
+        e.page.update()
 
-    def on_pre_view(self):
+    def on_pre_view(self, e):
         controls = [ChapaCard(c.get_data(), self.delete) for c in Chapa.select()]
         self.list_view.controls = controls
-        return super().on_pre_view()
+        self.chapa_field.value = ""
+        self.chapa_field.focus()
 
     def delete(self, e, chapa_id):
         if len(self.list_view.controls) == 2:
             return e.page.snack_bar.message('Devem haver duas chapas, no mínimo')
 
         Chapa.delete_by_id(chapa_id)
-        self.on_pre_view()
+        self.on_pre_view(e)
         e.page.update()
 
 
