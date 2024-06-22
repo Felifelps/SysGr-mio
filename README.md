@@ -1,42 +1,42 @@
 <p align="center">
-    <img src="/assets/icon.png" alt="Logo" width=200 height=200>
+    <img src="/assets/icon.png" alt="Logo" width="200" height="200">
 </p>
 
 # SysGremio
 
-O SysGremio é uma urna eletrônica desenvolvida inicialmente no segundo ano do curso técnico em informática para ser utilizada durante a eleição do Grêmio da escola.
+SysGremio is a simple voting app developed initially in the second year of the technical course in computer science to help with student council voting.
 
-## Funcionalidades
+## Functionalities
 
-- Configuração de chapas;
-- Votação segura;
-- Som de aviso após votação;
-- Geração de arquivo com os resultados após a votação.
+- Slate configuration
+- Secure voting
+- Alert sound after voting
+- Generation of a result file at the end of the voting
 
-## Tecnologias usadas
+## Technologies
 
-- Python;
-- Framework Flet;
-- Bcrypt, para criptografia;
-- Peewee, como *Object Relational Mapping*;
-- Dotenv.
+- Python
+- Flet
+- Bcrypt
+- Peewee
+- Dotenv
 
-## Instalação
+## Installation
 
-Para instalar o projeto, siga os seguintes passos:
+To install this project, follow these steps:
 
-1. [Instale o python](https://www.python.org/downloads/) mais recente em sua máquina
-2. Clone o projeto:
+1. [Install Python](https://www.python.org/downloads/) on your machine.
+2. Clone this project:
 
-    ```
+    ```shell
     git clone https://github.com/Felifelps/SysGremio SysGremio
     ```
 
-3. Entre na pasta do projeto, crie e ative um ambiente virtual:
+3. In the project directory, create and activate a virtual environment:
 
     - Windows:
 
-        ```
+        ```shell
         cd SysGremio
         python -m venv venv
         venv\Scripts\activate
@@ -44,32 +44,32 @@ Para instalar o projeto, siga os seguintes passos:
 
     - Linux/MacOS:
 
-        ```
+        ```shell
         cd SysGremio
         python3 -m venv venv
         source venv/bin/activate
         ```
 
-4. Instale as dependências do projeto:
+4. Install the project requirements:
 
-    ```
+    ```shell
     pip install -r requirements.txt
     ```
 
-5. Agora, rode o seguinte comando para gerar sua senha:
+5. Set your password by running:
 
-    ```
+    ```shell
     python generate_env.py
     ```
 
-6. Para iniciar o projeto, rode o seguinte comando:
+6. Run the project with:
 
-    ```
+    ```shell
     flet run app.py
     ```
 
-Ou tente instalar para windows com [o pacote .msi](https://github.com/Felifelps/SysGremio/releases/tag/windows).
+If you are on Windows, install the .msi package from [here](https://github.com/Felifelps/SysGremio/releases/tag/windows).
 
-## Contribuição
+## Contribution
 
-Fique à vontade para fazer Forks e várias Pull Requests. Estou aberto a sugestões e melhorias.
+Fork this repo and make a pull request with your changes, and I'll review it as soon as possible.
